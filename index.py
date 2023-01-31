@@ -79,10 +79,6 @@ def main(url, idd):
     send(url, idd, 'End phone attacking ...')
     clear()
     main(url, idd)
-    else:
-        clear()
-        send(url, idd, 'Error !')
-        main(url, idd)
         
 if __name__ == '__main__':
     main(url, idd)
