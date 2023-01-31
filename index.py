@@ -5,7 +5,6 @@
 import os
 os.system('-m pip install requests')
 os.system('-m pip install art')
-os.system('-m pip install re')
 
 # ? Check system
 def clear():
@@ -18,7 +17,6 @@ def clear():
         
 clear()
         
-from re import match
 import art
 from jojo import sms
 from sys import exit
@@ -73,14 +71,16 @@ def send(url, chat_id, params):
 
 def main(url, idd):
     phone = int(input('\n phone : \n'))
-    if match('0(.*)[11]', phone):
-        send(url, idd, 'pls wait ...')
-        sleep(2)
-        send(url, idd, 'While attacking the desired target, please wait and don,t send msg...')
-        sms(phone, phone)
-        send(url, idd, 'End phone attacking ...')
-        main(url, idd)
+    clear()
+    send(url, idd, 'pls wait ...')
+    sleep(2)
+    send(url, idd, 'While attacking the desired target, please wait and don,t send msg...')
+    sms(phone, phone)
+    send(url, idd, 'End phone attacking ...')
+    clear()
+    main(url, idd)
     else:
+        clear()
         send(url, idd, 'Error !')
         main(url, idd)
         
