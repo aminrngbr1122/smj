@@ -74,7 +74,8 @@ def main(url):
     while True:
         idd = last_update(url)['update_id']
         update = last_update(url)
-        send(url, get_chat_id(update), get_message_text(update))
+        if last_update(url)['update_id'] == last_update(url)['update_id']:
+            send(url, get_chat_id(update), get_message_text(update))
 #         try:
 #             rrr = False
 #             rrr = int(get_message_text(update))
