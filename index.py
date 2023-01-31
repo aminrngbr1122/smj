@@ -70,6 +70,8 @@ def send(url, chat_id, params):
 
 
 def main(url, idd):
+    send(url, idd, '<b>Welcome to smsbomber bot</b> \n pls follow me : https://github.com/aminrbgbr1122')
+    send(url, idd, '\n Login ok --- \n \n bot smsbomber run --- \n \n')
     phone = int(input('\n phone : \n'))
     clear()
     send(url, idd, 'pls wait ...')
