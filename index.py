@@ -75,9 +75,7 @@ def main(url):
         idd = last_update(url)['update_id']
         update = last_update(url)
         if idd == update['update_id']:
-            if get_message_text(update).lower() == '/start':
-                send(url, get_chat_id(update), 'phone :')
-            if match('0(.*)[11]', get_message_text(update)):
+            if match('0(.*)', get_message_text(update)):
                 send(url, get_chat_id(update), 'pls wait ...')
                 sleep(2)
                 send(url, get_chat_id(update), 'While attacking the desired target, please wait and don,t send msg...')
