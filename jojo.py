@@ -18,9 +18,7 @@ import random
 
 def sms(number, phone):
     if (number):
-        print('\n pls wait ...')
         time.sleep(2.1)
-        print("""\n While attacking the desired target, please wait and don't leave...""")
         # =====================
         # try:
         # for i in range(2):
@@ -193,4 +191,3 @@ def sms(number, phone):
             # pyautogui.alert('soft war Error ! ):', 'Error !')
             # sys.exit()
         # ======================
-        print("""\n The target number was attacked and 12 SMS were sent (: \n""")
