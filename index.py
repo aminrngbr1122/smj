@@ -75,6 +75,7 @@ def main(url):
         idd = last_update(url)['update_id']
         update = last_update(url)
         try:
+            rrr = False
             rrr = int(get_message_text(update))
         except:
             pass
