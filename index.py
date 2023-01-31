@@ -65,26 +65,9 @@ def last_update(url):
     return result[total_updates]
 
 
-def send(url, chat_id, params, caption='.', types='sendmessage'):
-    if types == 'sendmessage':
-        par = {'chat_id':chat_id, 'text':text, 'parse_mode':'html'}
-        requests.post(url+'sendmessage', data=par)
-    if types == 'sendvideo':
-        par = {'chat_id':chat_id,'video':params,
-               'parse_mode':'html', 'caption':caption}
-        requests.post(url+'sendvideo', data=par)
-    if types == 'sendphoto':
-        par = {'chat_id':chat_id, 'photo':params,
-               'parse_mode':'html', 'caption':caption}
-        requests.post(url+'sendphoto', data=par)
-    if types == 'sendaudio':
-        par = {'chat_id':chat_id, 'audio':params,
-               'parse_mode':'html', 'caption':caption}
-        requests.post(url+'sendaudio', data=par)
-    if types == 'senddocument':
-        par = {'chat_id':chat_id, 'document':params,
-               'parse_mode':'html', 'caption':caption}
-        requests.post(url+'senddocument', data=par)
+def send(url, chat_id, params):
+    par = {'chat_id':chat_id, 'text':params, 'parse_mode':'html'}
+    requests.post(url+'sendmessage', data=par)
 
 
 def main(url):
