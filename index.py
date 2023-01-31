@@ -74,13 +74,12 @@ def main(url):
     while True:
         idd = last_update(url)['update_id']
         update = last_update(url)
-        if idd == update['update_id']:
-            if match('0(.*)', get_message_text(update)):
-                send(url, get_chat_id(update), 'pls wait ...')
-                sleep(2)
-                send(url, get_chat_id(update), 'While attacking the desired target, please wait and don,t send msg...')
-                sms(get_message_text(update), get_message_text(update))
-                send(url, get_chat_id(update), 'End phone attacking ...')
+        if match('0(.*)', get_message_text(update)):
+            send(url, get_chat_id(update), 'pls wait ...')
+            sleep(2)
+            send(url, get_chat_id(update), 'While attacking the desired target, please wait and don,t send msg...')
+            sms(get_message_text(update), get_message_text(update))
+            send(url, get_chat_id(update), 'End phone attacking ...')
                 
         idd = []
         update = []
