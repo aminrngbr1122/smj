@@ -88,9 +88,5 @@ def main(url):
 #             sms(get_message_text(update), get_message_text(update))
 #             send(url, get_chat_id(update), 'End phone attacking ...')
 
-        idd = []
-        update = []
-
-
 if __name__ == '__main__':
     main(url)
