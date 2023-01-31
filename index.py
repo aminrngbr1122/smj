@@ -74,17 +74,18 @@ def main(url):
     while True:
         idd = last_update(url)['update_id']
         update = last_update(url)
-        try:
-            rrr = False
-            rrr = int(get_message_text(update))
-        except:
-            pass
-        if rrr:
-            send(url, get_chat_id(update), 'pls wait ...')
-            sleep(2)
-            send(url, get_chat_id(update), 'While attacking the desired target, please wait and don,t send msg...')
-            sms(get_message_text(update), get_message_text(update))
-            send(url, get_chat_id(update), 'End phone attacking ...')
+        send(url, get_chat_id(update), get_message_text(update))
+#         try:
+#             rrr = False
+#             rrr = int(get_message_text(update))
+#         except:
+#             pass
+#         if rrr:
+#             send(url, get_chat_id(update), 'pls wait ...')
+#             sleep(2)
+#             send(url, get_chat_id(update), 'While attacking the desired target, please wait and don,t send msg...')
+#             sms(get_message_text(update), get_message_text(update))
+#             send(url, get_chat_id(update), 'End phone attacking ...')
 
         idd = []
         update = []
